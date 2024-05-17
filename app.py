@@ -3,25 +3,28 @@ import plotly.express as px
 import streamlit as st
 
 car_data = pd.read_csv('vehicles_us.csv')  # leer los datos
-st.header('SELECCIONAR')
-# crear un control de verificación
-checkbox_selected = st.checkbox('Control de verificación')
+hist_button = st.button('Construir histograma')  # crear un botón
+scatter_button = st.button(
+    'Construir diagrama de dispersión')  # crear un botón
 
-
-if checkbox_selected:  # al seleccionar el control de verificación
+if hist_button:  # al hacer clic en el botón
     # escribir un mensaje
     st.write(
-        'Creación de un histograma y un diagrama de dispersión')
+        'Creación de un histograma para el conjunto de datos de anuncios de venta de coches')
 
     # crear un histograma
-    fig_hist = px.histogram(car_data, x="odometer")
-
-    # crear un diagra de dispersión
-    fig_scatter = px.scatter(car_data, x="price", y="odometer", )
+    fig = px.histogram(car_data, x="odometer")
 
     # mostrar un gráfico Plotly interactivo
-    col3, col4 = st.beta_columns(2)
-    with col3:
-        st.plotly_chart(fig_hist, use_container_width=True)
-    with col4:
-        st.plotly_chart(fig_scatter, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True)
+
+if scatter_button:  # al hacer clic en el botón
+    # escribir un mensaje
+    st.write(
+        'Creación de un diagrama de dispersión para el conjunto de datos de anuncios de venta de coches')
+
+    # crear un diagrama de dispersión
+    fig = px.scatter(car_data, x="price", y="odometer")
+
+    # mostrar un gráfico Plotly interactivo
+    st.plotly_chart(fig, use_container_width=True)
