@@ -39,3 +39,8 @@ if scatter_button:  # al hacer clic en el botón
     st.markdown("""
     Este gráfico muestra la relación entre el precio de un vehículo y su millaje. Se puede observar que entre menos millas acumuladas su precio es mayor con respecto a los que tienen acumuladas menos millas.
     """)
+
+    # Link del repositorio github
+    st.markdown("""
+    **https://github.com/lautorres9/my_render_sprint5**
+    """)
