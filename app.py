@@ -21,7 +21,6 @@ if hist_button:  # al hacer clic en el botón
 
     # agregar texto debajo del gráfico
     st.markdown("""
-    **Histograma del campo odometer:**
     Este gráfico muestra la distribución de los vehículos de acuerdo a su millaje ("odometer"). Es decir, cada barra representa el número ("count") de vehículos que tienen un rango específico de millas. Se puede observar que entre 500 a 600 carros tienen acumulados entre 98.000 a 122.000 millas.
     """)
 
@@ -38,6 +37,5 @@ if scatter_button:  # al hacer clic en el botón
 
     # agregar texto debajo del gráfico
     st.markdown("""
-    **Diagrama de dispersión de los campos price y odometer:**
     Este gráfico muestra la relación entre el precio de un vehículo y su millaje. Se puede observar que entre menos millas acumuladas su precio es mayor con respecto a los que tienen acumuladas menos millas.
     """)
